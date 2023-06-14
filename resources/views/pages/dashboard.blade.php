@@ -6,7 +6,7 @@
 @section('content')
     <div class="content">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
@@ -17,8 +17,8 @@
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Capacity</p>
-                                    <p class="card-title">150GB
+                                    <p class="card-category">Kayu</p>
+                                    <p class="card-title">150 kubik
                                         <p>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
@@ -43,8 +43,8 @@
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Revenue</p>
-                                    <p class="card-title">$ 1,345
+                                    <p class="card-category">Bangunan</p>
+                                    <p class="card-title">1,345 item
                                         <p>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
@@ -83,8 +83,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            </div> --}}
+            {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
@@ -109,14 +109,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-header ">
-                        <h5 class="card-title">Users Behavior</h5>
-                        <p class="card-category">24 Hours performance</p>
+                        <h5 class="card-title">Grafik Penjualan</h5>
+                        {{-- <p class="card-category">24 Hours performance</p> --}}
                     </div>
                     <div class="card-body ">
                         <canvas id=chartHours width="400" height="100"></canvas>
@@ -130,8 +130,8 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
+        {{-- <div class="row"> --}}
+            {{-- <div class="col-md-4">
                 <div class="card ">
                     <div class="card-header ">
                         <h5 class="card-title">Email Statistics</h5>
@@ -153,8 +153,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-8">
+            </div> --}}
+            {{-- <div class="col-md-8">
                 <div class="card card-chart">
                     <div class="card-header">
                         <h5 class="card-title">NASDAQ: AAPL</h5>
@@ -174,8 +174,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> --}}
+        {{-- </div> --}}
     </div>
 @endsection
 
