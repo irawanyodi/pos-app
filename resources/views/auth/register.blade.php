@@ -1,4 +1,4 @@
-@extends('layouts.app', [
+{{-- @extends('layouts.app', [
     'class' => 'register-page',
     'backgroundImagePath' => 'img/bg/jan-sendereks.jpg'
 ])
@@ -145,4 +145,6 @@
             demo.checkFullPageBackgroundImage();
         });
     </script>
-@endpush
+@endpush --}}
+
+{{ abort(403) }}
