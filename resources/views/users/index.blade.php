@@ -22,7 +22,7 @@ The above copyright notice and this permission notice shall be included in all c
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('paper') }}/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="{{ asset('paper') }}/img/favicon.png">
+    <link rel="icon" type="image/png" href="{{ asset('paper') }}/img/pos.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <!-- Extra details for Live View on GitHub Pages -->
@@ -62,7 +62,7 @@ The above copyright notice and this permission notice shall be included in all c
     <meta property="og:site_name" content="Creative Tim" />
     
     <title>
-        {{ __('Paper Dashboard by Creative Tim') }}
+        {{ __('JAYASA POS') }}
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
@@ -137,74 +137,81 @@ The above copyright notice and this permission notice shall be included in all c
                     </div>
                     <div class="sidebar-wrapper">
                         <ul class="nav">
-                            <li>
-                                <a href="{{ route('page.index', 'dashboard') }}">
-                                    <i class="nc-icon nc-bank"></i>
-                                    <p>{{ __('Dashboard') }}</p>
-                                </a>
-                            </li>
-                            <li >
-                                <a data-toggle="collapse" aria-expanded="true" href="#laravelExamples">
-                                    <i class="nc-icon"><img src="{{ asset('paper/img/laravel.svg') }}"></i>
-                                    <p>
-                                            {{ __('Laravel examples') }}
-                                        <b class="caret"></b>
-                                    </p>
-                                </a>
-                                <div class="collapse show" id="laravelExamples">
-                                    <ul class="nav">
-                                        <li >
-                                            <a href="{{ route('profile.edit') }}">
-                                                <span class="sidebar-mini-icon">{{ __('UP') }}</span>
-                                                <span class="sidebar-normal">{{ __(' User Profile ') }}</span>
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="{{ route('page.index', 'user') }}">
-                                                <span class="sidebar-mini-icon">{{ __('U') }}</span>
-                                                <span class="sidebar-normal">{{ __(' User Management ') }}</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li >
-                                <a href="{{ route('page.index', 'icons') }}">
-                                    <i class="nc-icon nc-diamond"></i>
-                                    <p>{{ __('Icons') }}</p>
-                                </a>
-                            </li>
-                            <li >
-                                <a href="{{ route('page.index', 'map') }}">
-                                    <i class="nc-icon nc-pin-3"></i>
-                                    <p>{{ __('Maps') }}</p>
-                                </a>
-                            </li>
-                            <li >
-                                <a href="{{ route('page.index', 'notifications') }}">
-                                    <i class="nc-icon nc-bell-55"></i>
-                                    <p>{{ __('Notifications') }}</p>
-                                </a>
-                            </li>
-                            <li >
-                                <a href="{{ route('page.index', 'tables') }}">
-                                    <i class="nc-icon nc-tile-56"></i>
-                                    <p>{{ __('Table List') }}</p>
-                                </a>
-                            </li>
-                            <li >
-                                <a href="{{ route('page.index', 'typography') }}">
-                                    <i class="nc-icon nc-caps-small"></i>
-                                    <p>{{ __('Typography') }}</p>
-                                </a>
-                            </li>
-                            {{-- <li class="active-pro {{ $elementActive == 'upgrade' ? 'active' : '' }}">
-                                <a href="{{ route('page.index', 'upgrade') }}" class="bg-danger">
-                                    <i class="nc-icon nc-spaceship text-white"></i>
-                                    <p class="text-white">{{ __('Upgrade to PRO') }}</p>
-                                </a>
-                            </li> --}}
-                        </ul>
+            <li>
+                <a href="{{ route('page.index', 'dashboard') }}">
+                    <i class="nc-icon nc-bank"></i>
+                    <p>{{ __('Dashboard') }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('page.index', 'transaction') }}">
+                    <i class="nc-icon nc-cart-simple"></i>
+                    <p>{{ __('Transaction') }}</p>
+                </a>
+            </li>
+            <li >
+                <a href="{{ route('page.index', 'produk') }}">
+                    <i class="nc-icon nc-app"></i>
+                    <p>{{ __('Produk') }}</p>
+                </a>
+            </li>
+            <li>
+                <a data-toggle="collapse" aria-expanded="true" href="#laravelExamples">
+                    <i class="nc-icon nc-circle-10"></i>
+                    <p>
+                            {{ __('Account Management') }}
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse show" id="laravelExamples">
+                    <ul class="nav">
+                        <li>
+                            <a href="{{ route('profile.edit') }}">
+                                <span class="sidebar-mini-icon">{{ __('UP') }}</span>
+                                <span class="sidebar-normal">{{ __(' User Profile ') }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('page.index', 'user') }}">
+                                <span class="sidebar-mini-icon">{{ __('U') }}</span>
+                                <span class="sidebar-normal">{{ __(' User Management ') }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            {{-- <li class="{{ $elementActive == 'icons' ? 'active' : '' }}">
+                <a href="{{ route('page.index', 'icons') }}">
+                    <i class="nc-icon nc-diamond"></i>
+                    <p>{{ __('Icons') }}</p>
+                </a>
+            </li> --}}
+            {{-- <li class="{{ $elementActive == 'map' ? 'active' : '' }}">
+                <a href="{{ route('page.index', 'map') }}">
+                    <i class="nc-icon nc-pin-3"></i>
+                    <p>{{ __('Maps') }}</p>
+                </a>
+            </li> --}}
+            {{-- <li class="{{ $elementActive == 'notifications' ? 'active' : '' }}">
+                <a href="{{ route('page.index', 'notifications') }}">
+                    <i class="nc-icon nc-bell-55"></i>
+                    <p>{{ __('Notifications') }}</p>
+                </a>
+            </li> --}}
+            
+            {{-- <li class="{{ $elementActive == 'typography' ? 'active' : '' }}">
+                <a href="{{ route('page.index', 'typography') }}">
+                    <i class="nc-icon nc-caps-small"></i>
+                    <p>{{ __('Typography') }}</p>
+                </a>
+            </li> --}}
+            {{-- <li class="active-pro {{ $elementActive == 'upgrade' ? 'active' : '' }}">
+                <a href="{{ route('page.index', 'upgrade') }}" class="bg-danger">
+                    <i class="nc-icon nc-spaceship text-white"></i>
+                    <p class="text-white">{{ __('Upgrade to PRO') }}</p>
+                </a>
+            </li> --}}
+        </ul>
                     </div>
                 </div>
     <div class="main-panel">
@@ -218,7 +225,7 @@ The above copyright notice and this permission notice shall be included in all c
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="#pablo">{{ __('Paper Dashboard') }}</a>
+                    {{-- <a class="navbar-brand" href="#pablo">{{ __('Paper Dashboard') }}</a> --}}
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -227,7 +234,7 @@ The above copyright notice and this permission notice shall be included in all c
                     <span class="navbar-toggler-bar navbar-kebab"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                    <form>
+                    {{-- <form>
                         <div class="input-group no-border">
                             <input type="text" value="" class="form-control" placeholder="Search...">
                             <div class="input-group-append">
@@ -236,16 +243,16 @@ The above copyright notice and this permission notice shall be included in all c
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link btn-magnify" href="#pablo">
                                 <i class="nc-icon nc-layout-11"></i>
                                 <p>
                                     <span class="d-lg-none d-md-block">{{ __('Stats') }}</span>
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item btn-rotate dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -329,10 +336,10 @@ The above copyright notice and this permission notice shall be included in all c
                     </div>
                 </div>
             </div>
-            <div class="alert alert-danger alert-dismissible fade show">
+            {{-- <div class="alert alert-danger alert-dismissible fade show">
                 <span>
                     <b> </b> This is a PRO feature!</span>
-            </div>
+            </div> --}}
         </div>
     </div>
         <footer class="footer footer-black  footer-white ">
@@ -365,7 +372,8 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
     </div>
 </footer>    </div>
-</div>        <div class="fixed-plugin">
+</div>        
+{{-- <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
         <a href="#" data-toggle="dropdown">
             <i class="fa fa-cog fa-2x"> </i>
@@ -419,7 +427,7 @@ The above copyright notice and this permission notice shall be included in all c
             </li>
         </ul>
     </div>
-</div>        
+</div>         --}}
     <!--   Core JS Files   -->
     <script src="{{ asset('paper') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('paper') }}/js/core/popper.min.js"></script>
