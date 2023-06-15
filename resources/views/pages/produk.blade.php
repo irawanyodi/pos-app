@@ -9,23 +9,23 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title"> Simple Table</h4>
+                        <h4 class="card-title"> Data Produk</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>
-                                        Name
+                                        Kategori
                                     </th>
                                     <th>
-                                        Country
+                                        Nama
                                     </th>
                                     <th>
-                                        City
+                                        Stok
                                     </th>
                                     <th class="text-right">
-                                        Salary
+                                        Harga
                                     </th>
                                 </thead>
                                 <tbody>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            {{-- <div class="col-md-12">
                 <div class="card card-plain">
                     <div class="card-header">
                         <h4 class="card-title"> Table on Plain Background</h4>
@@ -260,7 +260,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
