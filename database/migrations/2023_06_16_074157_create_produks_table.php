@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
+            $table->enum('kategori', ['kayu', 'bangunan']);
+            $table->string('nama', 100);
+            $table->integer('stok');
+            $table->integer('harga');
             $table->timestamps();
         });
     }
