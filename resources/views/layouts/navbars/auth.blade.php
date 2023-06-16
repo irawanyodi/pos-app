@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="{{ $elementActive == 'produk' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'produk') }}">
+                <a href="{{ url('produk') }}">
                     <i class="nc-icon nc-app"></i>
                     <p>{{ __('Produk') }}</p>
                 </a>
