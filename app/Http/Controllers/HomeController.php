@@ -26,6 +26,7 @@ class HomeController extends Controller
         $bangunan = Produk::where('kategori', '=', 'bangunan')->count();
         $kayu = Produk::where('kategori', '=', 'kayu')->count();
 
+        // return '$kayu';
         return view('pages.dashboard', compact('bangunan', 'kayu'));
     }
 }

@@ -7,13 +7,20 @@
     <div class="content">
         <div class="row">
             <div class="col-md-12">
+                <button class="btn btn-outline-primary btn-round bg-light">
+                    <i class="nc-icon nc-simple-add"></i> Produk
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title"> Data Produk</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table" id="produk-table">
                                 <thead class=" text-primary">
                                     <th>
                                         Kategori
@@ -27,106 +34,35 @@
                                     <th class="text-right">
                                         Harga
                                     </th>
+                                    <th class="text-right">
+                                        Aksi
+                                    </th>
                                 </thead>
                                 <tbody>
+                                    @foreach ($data as $item)
                                     <tr>
                                         <td>
-                                            Dakota Rice
+                                            {{ $item->kategori }}
                                         </td>
                                         <td>
-                                            Niger
+                                            {{ $item->nama }}
                                         </td>
                                         <td>
-                                            Oud-Turnhout
+                                            {{ $item->stok }}
                                         </td>
                                         <td class="text-right">
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
+                                            Rp. {{ $item->harga }}
                                         </td>
                                         <td class="text-right">
-                                            $23,789
+                                            <button class="btn btn-warning btn-fab btn-icon btn-round">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="btn btn-danger btn-fab btn-icon btn-round">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td class="text-right">
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td class="text-right">
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td class="text-right">
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-right">
-                                            $78,615
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Jon Porter
-                                        </td>
-                                        <td>
-                                            Portugal
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-right">
-                                            $98,615
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -263,4 +199,15 @@
             </div> --}}
         </div>
     </div>
+@endsection
+@section('js')
+<script>
+    $(document).ready( function () {
+        $('#produk-table').DataTable({
+            paging: false,
+            searching: false,
+            scrollY: 500
+        });
+    } );
+</script>
 @endsection

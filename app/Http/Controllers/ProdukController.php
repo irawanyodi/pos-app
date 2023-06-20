@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Produk;
 use Illuminate\Http\Request;
+use Datatables;
 
 class ProdukController extends Controller
 {
@@ -17,7 +19,17 @@ class ProdukController extends Controller
 
     public function index()
     {
-        return view('pages.produk');
+        $data = Produk::all();
+
+        return view('pages.produk', compact('data'));
+    }
+
+    public function api()
+    {
+        $produks = Produk::all();
+        $datatables = datatables()->of($produks)->addIndexColumn();
+
+        return $datatables->make(true);
     }
 
     /**
