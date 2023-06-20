@@ -18,7 +18,7 @@
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
                                     <p class="card-category">Kayu</p>
-                                    <p class="card-title">150 kubik
+                                    <p class="card-title">{{ $kayu }} item
                                         <p>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
                                     <p class="card-category">Bangunan</p>
-                                    <p class="card-title">1,345 item
+                                    <p class="card-title">{{ $bangunan }} item
                                         <p>
                                 </div>
                             </div>

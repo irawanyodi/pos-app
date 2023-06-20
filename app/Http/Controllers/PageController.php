@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -24,8 +25,9 @@ class PageController extends Controller
      */
     public function index(string $page)
     {
+        $produk = Produk::all();
         if (view()->exists("pages.{$page}")) {
-            return view("pages.{$page}");
+            return view("pages.{$page}", compact('produk'));
         }
 
         return abort(404);

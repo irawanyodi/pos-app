@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard');
+        $bangunan = Produk::where('kategori', '=', 'bangunan')->count();
+        $kayu = Produk::where('kategori', '=', 'kayu')->count();
+
+        return view('pages.dashboard', compact('bangunan', 'kayu'));
     }
 }
