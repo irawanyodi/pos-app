@@ -74,14 +74,17 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
     <script src="{{ asset('paper') }}/demo/demo.js"></script>
     <!-- Sharrre libray -->
-    <script src="../assets/demo/jquery.sharrre.js"></script>
+    {{-- <script src="../assets/demo/jquery.sharrre.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    {{-- <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script> --}}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     @yield('js')
 
     
-    @stack('scripts')
+    {{-- @stack('scripts') --}}
 
-    @include('layouts.navbars.fixed-plugin-js')
+    {{-- @include('layouts.navbars.fixed-plugin-js') --}}
 </body>
 
 </html>

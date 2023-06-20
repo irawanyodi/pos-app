@@ -4,7 +4,7 @@
 ])
 
 @section('content')
-    <div class="content">
+    <div id="controller" class="content">
         <div class="row">
             <div class="col-md-12">
                 <button class="btn btn-outline-primary btn-round bg-light">
@@ -38,7 +38,7 @@
                                         Aksi
                                     </th>
                                 </thead>
-                                <tbody>
+                                {{-- <tbody>
                                     @foreach ($data as $item)
                                     <tr>
                                         <td>
@@ -63,7 +63,7 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                                </tbody>
+                                </tbody> --}}
                             </table>
                         </div>
                     </div>
@@ -202,12 +202,26 @@
 @endsection
 @section('js')
 <script>
-    $(document).ready( function () {
-        $('#produk-table').DataTable({
-            paging: false,
-            searching: false,
-            scrollY: 500
-        });
-    } );
+    var actUrl = '{{ url('authors') }}';
+    var apiUrl = '{{ url('api/produk') }}';
+
+    var columns = [
+        // {data: 'DT_RowIndex', class: 'text-center', orderable: true},   
+        {data: 'kategori', orderable: true},
+        {data: 'nama', orderable: true},
+        {data: 'stok', orderable: true},
+        {data: 'harga', class: 'text-center', orderable: true},
+        // {data: 'date', class: 'text-center', orderable: true},
+        {render: function (index, row, data, meta) {
+            return `
+            <button class="btn btn-warning btn-fab btn-icon btn-round">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="btn btn-danger btn-fab btn-icon btn-round">
+                <i class="fa-solid fa-trash"></i>
+            </button>`;
+        }, orderable: false, width: '110px', class: 'text-center'},
+    ];
 </script>
+<script src="{{ asset('js/data.js') }}"></script>
 @endsection
