@@ -214,12 +214,17 @@
         // {data: 'date', class: 'text-center', orderable: true},
         {render: function (index, row, data, meta) {
             return `
+            <a href="{{ url('produk')}}/${data.id}/edit">
             <button class="btn btn-warning btn-fab btn-icon btn-round">
                 <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-            <button class="btn btn-danger btn-fab btn-icon btn-round">
-                <i class="fa-solid fa-trash"></i>
-            </button>`;
+            </button></a>
+            <form action="{{ url('produk') }}/${data.id}" method="post" class="d-inline-block">
+                <button type="submit" value="Delete" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-fab btn-icon btn-round">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                @method('delete')
+                @csrf
+            </form>`;
         }, orderable: false, width: '110px', class: 'text-center'},
     ];
 </script>

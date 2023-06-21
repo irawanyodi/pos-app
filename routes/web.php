@@ -24,7 +24,6 @@ Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
-Route::resource('produk', App\Http\Controllers\ProdukController::class);
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
@@ -33,6 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 
+Route::resource('produk', App\Http\Controllers\ProdukController::class);
 Route::get('/api/produk', [App\Http\Controllers\ProdukController::class, 'api']);
 
 Route::group(['middleware' => 'auth'], function () {

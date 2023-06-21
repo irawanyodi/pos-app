@@ -21,7 +21,7 @@ var controller = new Vue({
                 columns,
                 paging: false,
                 searching: false,
-                scrollY: 500
+                // scrollY: 500
             }).on('xhr', function() {
                 _this.datas = _this.table.ajax.json().data;
             });
