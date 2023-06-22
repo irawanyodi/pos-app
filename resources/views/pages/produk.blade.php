@@ -7,17 +7,12 @@
     <div id="controller" class="content">
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-outline-primary btn-round bg-light">
-                    <i class="nc-icon nc-simple-add"></i> Produk
-                </button>
+                <a href="{{ url('produk/create') }}" class="btn btn-outline-primary btn-round bg-light"><i class="nc-icon nc-simple-add"></i> Produk</a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title"> Data Produk</h4>
-                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="produk-table">

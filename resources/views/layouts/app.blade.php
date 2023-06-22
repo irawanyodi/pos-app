@@ -82,7 +82,7 @@ The above copyright notice and this permission notice shall be included in all c
     @yield('js')
 
     
-    {{-- @stack('scripts') --}}
+    @stack('scripts')
 
     {{-- @include('layouts.navbars.fixed-plugin-js') --}}
 </body>

@@ -37,7 +37,9 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        //
+        $kategori = Produk::select('kategori')->distinct()->get();
+
+        return view('produk.create', compact('kategori'));
     }
 
     /**
@@ -45,7 +47,16 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'kategori' => 'required',
+            'nama' => 'required',
+            'harga' => 'required|numeric',
+            'stok' => 'required|numeric',
+        ]);
+
+        Produk::create($request->all());
+
+        return redirect('produk');
     }
 
     /**
@@ -59,24 +70,36 @@ class ProdukController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Produk $produk)
     {
-        //
+        $kategori = Produk::select('kategori')->distinct()->get();
+
+        return view('produk.edit', compact('kategori', 'produk'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Produk $produk)
     {
-        //
+        $this->validate($request, [
+            'kategori' => 'required',
+            'nama' => 'required',
+            'harga' => 'required|numeric',
+            'stok' => 'required|numeric',
+        ]);
+
+        $produk->update($request->all());
+
+        return redirect('produk');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Produk $produk)
     {
-        //
+        $produk->delete();
+        return redirect('produk');
     }
 }
