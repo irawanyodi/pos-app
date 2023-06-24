@@ -42,7 +42,6 @@ The above copyright notice and this permission notice shall be included in all c
     <link href="{{ asset('paper') }}/demo/demo.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/7c5abda22b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-  
 
 
 </head>

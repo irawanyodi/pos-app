@@ -9,10 +9,10 @@ class CartController extends Controller
 {
     public function cartList()
     {
-        return "tes";
+        // return "tes";
         $cartItems = \Cart::getContent();
         // dd($cartItems);
-        return view('cart', compact('cartItems'));
+        return view('pages.cart', compact('cartItems'));
     }
 
 
@@ -21,19 +21,19 @@ class CartController extends Controller
         // return $request;
         // $this->validate($request, [
         //     'id' => 'required',
-        //     'nama' => 'required',
-        //     'harga' => 'required|numeric',
-        //     'qty' => 'required|numeric',
+        //     'name' => 'required',
+        //     'price' => 'required|numeric',
+        //     'quantity' => 'required|numeric',
         // ]);
 
         \Cart::add([
             'id' => $request->id,
-            'name' => $request->nama,
-            'price' => $request->harga,
-            'quantity' => $request->qty
+            'name' => $request->name,
+            'price' => $request->price,
+            'quantity' => $request->quantity
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
-        return redirect('cart.list');
+        return redirect()->route('cart.list');
     }
 
     public function updateCart(Request $request)
