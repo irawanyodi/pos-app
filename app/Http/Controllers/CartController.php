@@ -33,7 +33,7 @@ class CartController extends Controller
             'quantity' => $request->quantity
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
-        return redirect()->route('cart.list');
+        return redirect()->route('page.index', 'transaction');
     }
 
     public function updateCart(Request $request)

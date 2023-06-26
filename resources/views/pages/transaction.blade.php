@@ -5,6 +5,11 @@
 
 @section('content')
     <div class="content">
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success rounded">
+                <p class="text-green-800">{{ $message }}</p>
+            </div>
+        @endif
         <div class="row">
             @foreach ($produk as $item)
             <div class="col-md-4">
