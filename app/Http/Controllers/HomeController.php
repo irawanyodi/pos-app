@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class HomeController extends Controller
 {
@@ -14,6 +18,8 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        // $admin = DB::table('users')->where('email', '=', 'admin@mail.com')->get();
+        // $admin->assignRole('admin');
     }
 
     /**
@@ -23,6 +29,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
+        // $user = User::with('roles')->get();
+        // $user->assignRole('user');
+        // return $user;
         $bangunan = Produk::where('kategori', '=', 'bangunan')->count();
         $kayu = Produk::where('kategori', '=', 'kayu')->count();
 

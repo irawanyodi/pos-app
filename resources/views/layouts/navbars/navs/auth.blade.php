@@ -30,6 +30,7 @@
                 </div>
             </form> --}}
             <ul class="navbar-nav">
+                @role('user')
                 <li class="nav-item">
                     <a href="{{ route('cart.list') }}" class="nav-link btn-magnify">
                         <i class="fa-solid fa-basket-shopping"></i>
@@ -38,7 +39,8 @@
                         </sup>
                     </a>
                 </li>
-                <li class="nav-item btn-rotate dropdown">
+                @endrole
+                {{-- <li class="nav-item btn-rotate dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="nc-icon nc-bell-55"></i>
@@ -51,7 +53,7 @@
                         <a class="dropdown-item" href="#">{{ __('Another action') }}</a>
                         <a class="dropdown-item" href="#">{{ __('Something else here') }}</a>
                     </div>
-                </li>
+                </li> --}}
                 <li class="nav-item btn-rotate dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink2"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

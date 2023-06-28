@@ -11,16 +11,11 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
+            @role('admin')
             <li class="{{ $elementActive == 'dashboard' ? 'active' : '' }}">
                 <a href="{{ url('home') }}">
                     <i class="nc-icon nc-bank"></i>
                     <p>{{ __('Dashboard') }}</p>
-                </a>
-            </li>
-            <li class="{{ $elementActive == 'transaction' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'transaction') }}">
-                    <i class="nc-icon nc-cart-simple"></i>
-                    <p>{{ __('Transaction') }}</p>
                 </a>
             </li>
             <li class="{{ $elementActive == 'produk' ? 'active' : '' }}">
@@ -45,15 +40,24 @@
                                 <span class="sidebar-normal">{{ __(' User Profile ') }}</span>
                             </a>
                         </li>
-                        <li class="{{ $elementActive == 'user' ? 'active' : '' }}">
+                        {{-- <li class="{{ $elementActive == 'user' ? 'active' : '' }}">
                             <a href="{{ route('page.index', 'user') }}">
                                 <span class="sidebar-mini-icon">{{ __('U') }}</span>
                                 <span class="sidebar-normal">{{ __(' User Management ') }}</span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </li>
+            @endrole
+            @role('user')
+            <li class="{{ $elementActive == 'transaction' ? 'active' : '' }}">
+                <a href="{{ route('page.index', 'transaction') }}">
+                    <i class="nc-icon nc-cart-simple"></i>
+                    <p>{{ __('Transaction') }}</p>
+                </a>
+            </li>
+            @endrole
             {{-- <li class="{{ $elementActive == 'icons' ? 'active' : '' }}">
                 <a href="{{ route('page.index', 'icons') }}">
                     <i class="nc-icon nc-diamond"></i>
